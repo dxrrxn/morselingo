@@ -101,7 +101,6 @@ def morse_to_text(morse_code):
 
 def play_morse_sound(morse_code):
     pygame.init()
-    pygame.mixer.init()
 
     # sound_dot = pygame.mixer.Sound("dot.wav")
     # sound_dash = pygame.mixer.Sound("dash.wav")
