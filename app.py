@@ -24,7 +24,9 @@ import requests
 
 @st.cache_resource()
 def init_connection():
-    return MongoClient(st.secrets["db_connections"])
+    return MongoClient(
+        "mongodb+srv://dzrrzn:ppR8MaJGpemi81tn@cluster0.zdiqoso.mongodb.net/?retryWrites=true&w=majority"
+    )
 
 
 client = init_connection()
