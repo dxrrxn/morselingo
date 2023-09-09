@@ -24,9 +24,7 @@ import requests
 
 @st.cache_resource()
 def init_connection():
-    return MongoClient(
-        "mongodb+srv://dzrrzn:ppR8MaJGpemi81tn@cluster0.zdiqoso.mongodb.net/?retryWrites=true&w=majority"
-    )
+    return MongoClient(st.secrets["db_connections"])
 
 
 client = init_connection()
@@ -331,8 +329,8 @@ if selected == "Home":
 
         s3 = boto3.client(
             service_name="s3",
-            aws_access_key_id="AKIA2ACKFPNFF4FN4BHH",
-            aws_secret_access_key="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",
+            aws_access_key_id=st.secrets["access_key"],
+            aws_secret_access_key=st.secrets["secret_access_key"],
         )
         try:
             s3.upload_fileobj(file_content_io, "videofilesmp", filename)
@@ -503,7 +501,7 @@ if selected == "Feedback":
 
 if selected == "Morse Bot":
     st.title("Chat with Morse Bot")
-    openai.api_key = "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"
+    openai.api_key = st.secrets["openai_key"]
     # Storing the chat
     if "generated" not in st.session_state:
         st.session_state["generated"] = []
