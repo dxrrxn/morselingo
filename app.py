@@ -103,18 +103,18 @@ def play_morse_sound(morse_code):
     pygame.init()
     pygame.mixer.init()
 
-    sound_dot = pygame.mixer.Sound("dot.wav")
-    sound_dash = pygame.mixer.Sound("dash.wav")
+    # sound_dot = pygame.mixer.Sound("dot.wav")
+    # sound_dash = pygame.mixer.Sound("dash.wav")
 
-    for char in morse_code:
-        if char == ".":
-            sound_dot.play()
-            time.sleep(0.2)
-        elif char == "-":
-            sound_dash.play()
-            time.sleep(0.5)
-        elif char == " ":
-            time.sleep(0.5)
+    # for char in morse_code:
+    #     if char == ".":
+    #         sound_dot.play()
+    #         time.sleep(0.2)
+    #     elif char == "-":
+    #         sound_dash.play()
+    #         time.sleep(0.5)
+    #     elif char == " ":
+    #         time.sleep(0.5)
 
 
 def play_text_sound(text):
