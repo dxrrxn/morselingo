@@ -19,7 +19,6 @@ import numpy as np
 import cv2
 import random
 import tempfile
-import requests
 
 
 @st.cache_resource()
