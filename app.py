@@ -22,19 +22,6 @@ import tempfile
 import requests
 
 
-def get_external_ip():
-    response = requests.get("https://api64.ipify.org?format=json")
-    if response.status_code == 200:
-        data = response.json()
-        return data.get("ip")
-    else:
-        return "Unknown"
-
-
-external_ip = get_external_ip()
-print("External IP:", external_ip)
-
-
 @st.cache_resource()
 def init_connection():
     return MongoClient(
@@ -114,6 +101,7 @@ def morse_to_text(morse_code):
 
 def play_morse_sound(morse_code):
     pygame.init()
+    pygame.mixer.init()
 
     if not pygame.get_init():
         print("Error: pygame initialization failed.")
