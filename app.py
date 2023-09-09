@@ -19,6 +19,20 @@ import numpy as np
 import cv2
 import random
 import tempfile
+import requests
+
+
+def get_external_ip():
+    response = requests.get("https://api64.ipify.org?format=json")
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("ip")
+    else:
+        return "Unknown"
+
+
+external_ip = get_external_ip()
+print("External IP:", external_ip)
 
 
 @st.cache_resource()
