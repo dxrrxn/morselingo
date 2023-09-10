@@ -350,16 +350,16 @@ if selected == "Home":
         text2morse = st.text_input("Text")
         morse_result1 = text_to_morse(text2morse)
         st.write("Morse code detected is: ", morse_result1)
-        soundbuttonmorse = st.button("Morse Sound")
-        if soundbuttonmorse == True:
-            play_morse_sound(morse_result1)
+        # soundbuttonmorse = st.button("Morse Sound")
+        # if soundbuttonmorse == True:
+        #    play_morse_sound(morse_result1)
     with col2:
         morse2text = st.text_input("Morse")
         morse_result2 = morse_to_text(morse2text)
         st.write("Text detected is: ", morse_result2)
-        soundbuttontext = st.button("Text Sound")
-        if soundbuttontext == True:
-            play_text_sound(morse_result2)
+        # soundbuttontext = st.button("Text Sound")
+        # if soundbuttontext == True:
+        #   play_text_sound(morse_result2)
 
     st.subheader("Number of file inputs each day")
     db = client.morsecode
