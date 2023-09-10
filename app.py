@@ -342,7 +342,7 @@ if selected == "Home":
             st.success(f"File uploaded and stored.")
         except Exception as err:
             st.error(f"Error uploading file: {err}")
-    st.write("Files may be kept for research purposes")
+    st.write("Videos uploaded will be used for a future Neural Network")
     st.subheader("Text to Morse Translation")
 
     col1, col2 = st.columns(2)
